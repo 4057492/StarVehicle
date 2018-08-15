@@ -9,6 +9,7 @@ public class Enemy00 : Enemy {
 //	public float armour = 1;
 //
 //	public bool ifInvincible = false;
+	public string[] sounds = {"Fire Fireball Large 01","Fire Fireball Large 02","Fire Fireball Large 03"};
 
 	void Start () {
 
@@ -23,5 +24,6 @@ public class Enemy00 : Enemy {
 	public override void Hited ()
 	{
 		EventManager.shakeCamera ();
+		SoundEffectFunction.Play (gameObject, sounds);
 	}
 }
