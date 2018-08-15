@@ -13,15 +13,16 @@ public class ParticleEffectFunction : MonoBehaviour {
 	public void InsParticle(string name){
 		instance = Instantiate (Resources.Load ("Particle Effects/"+name, typeof(GameObject))) as GameObject;
 		instance.transform.position = gameObject.transform.position;
+		instance.AddComponent<ParticleDestoryAuto> ();
 		ps = instance.GetComponent<ParticleSystem> ();
 	}
 
 	IEnumerator End(){
 		while (ps == null)
 			yield return null;
-		while (ps.isPlaying)
-			yield return null;
-		Destroy (instance);
+		yield return new WaitForSecondsRealtime (ps.main.duration);
+		if(instance!=null)
+			Destroy (instance);
 		Destroy (this);
 		yield return null;
 	}
