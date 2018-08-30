@@ -7,6 +7,7 @@ public class SoundEffectFunction : MonoBehaviour {
 
 	private UnityEngine.Object sound;
 	private AudioSource au;
+	private GameObject temp;
 
 	// Use this for initialization
 	void Start () {
@@ -15,7 +16,8 @@ public class SoundEffectFunction : MonoBehaviour {
 
 	public void AddAudioSource(string name,float volume){
 		sound = Resources.Load ("Sound Effects/"+name);
-		au = gameObject.AddComponent<AudioSource> ();
+		temp = Instantiate (Resources.Load ("Sound Effects/SoundTemp"))as GameObject;
+		au = temp.GetComponent<AudioSource> ();
 		au.clip = (AudioClip)sound;
 		au.volume = volume;
 	}
@@ -23,9 +25,7 @@ public class SoundEffectFunction : MonoBehaviour {
 	IEnumerator End(){
 		while (au.clip == null)
 			yield return null;
-		au.Play ();
 		yield return new WaitForSecondsRealtime (au.clip.length);
-		Destroy (au);
 		Destroy (this);
 		yield return null;
 	}

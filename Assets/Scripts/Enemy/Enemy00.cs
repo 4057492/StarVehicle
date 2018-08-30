@@ -11,12 +11,15 @@ public class Enemy00 : Enemy {
 //	public bool ifInvincible = false;
 	public string[] sounds = {"Fire Fireball Large 01","Fire Fireball Large 02","Fire Fireball Large 03"};
 
-	void Start () {
+	private CreateBulletFunc muzzle;
 
+	void Start () {
+		muzzle = transform.GetChild (0).gameObject.GetComponent<CreateBulletFunc>();
 	}
 
 	void Update () {
 		if (hp <= 0 && !ifInvincible) {
+			muzzle.InsBullet ("BulletBag");
 			StartCoroutine (Wait ());
 		}
 	}
@@ -28,7 +31,7 @@ public class Enemy00 : Enemy {
 	}
 
 	IEnumerator Wait(){
-		yield return new WaitForSecondsRealtime (1f);
+		//yield return new WaitForSecondsRealtime (1f);
 		Destroy (gameObject);
 		yield return null;
 	}
