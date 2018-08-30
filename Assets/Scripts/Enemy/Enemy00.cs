@@ -17,13 +17,19 @@ public class Enemy00 : Enemy {
 
 	void Update () {
 		if (hp <= 0 && !ifInvincible) {
-			Destroy (gameObject);
+			StartCoroutine (Wait ());
 		}
 	}
 
 	public override void Hited ()
 	{
 		EventManager.shakeCamera ();
-		SoundEffectFunction.Play (gameObject, sounds);
+		SoundEffectFunction.Play (gameObject, sounds,0.5f);
+	}
+
+	IEnumerator Wait(){
+		yield return new WaitForSecondsRealtime (1f);
+		Destroy (gameObject);
+		yield return null;
 	}
 }
