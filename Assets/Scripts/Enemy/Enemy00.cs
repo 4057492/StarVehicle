@@ -9,7 +9,8 @@ public class Enemy00 : Enemy {
 //	public float armour = 1;
 //
 //	public bool ifInvincible = false;
-	public string[] sounds = {"Fire Fireball Large 01","Fire Fireball Large 02","Fire Fireball Large 03"};
+	//public string[] sounds = {"Fire Fireball Large 01","Fire Fireball Large 02","Fire Fireball Large 03"};
+	public string[] hitesSounds = { "Weapon Axe Hit On Dirt 01", "Weapon Axe Hit On Dirt 02" };
 
 	private CreateBulletFunc muzzle;
 
@@ -27,7 +28,8 @@ public class Enemy00 : Enemy {
 	public override void Hited ()
 	{
 		EventManager.shakeCamera ();
-		SoundEffectFunction.Play (gameObject, sounds,0.5f);
+		//SoundEffectFunction.Play (gameObject, sounds,0.5f);
+		SoundEffectFunction.Play (gameObject, hitesSounds);
 	}
 
 	IEnumerator Wait(){

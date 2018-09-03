@@ -72,13 +72,14 @@ public class SpriteFade : MonoBehaviour {
 		if (renderer != null) {
 			float speed = 1 / time;
 			Color color = renderer.color;
+			float oriA = renderer.color.a;
 			color.a = 0;
 			renderer.color = color;
 			yield return null;
-			while (color.a < 1) {
+			while (color.a < oriA) {
 				color.a += speed;
-				if (color.a > 1)
-					color.a = 1;
+				if (color.a > oriA)
+					color.a = oriA;
 				renderer.color = color;
 				yield return new WaitForSecondsRealtime (waitTime);
 			}
