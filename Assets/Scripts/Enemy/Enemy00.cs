@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy00 : Enemy {
+public class Enemy00 : Vehicle {
 
 //	public float hp = 1;
 //
@@ -10,7 +10,7 @@ public class Enemy00 : Enemy {
 //
 //	public bool ifInvincible = false;
 	//public string[] sounds = {"Fire Fireball Large 01","Fire Fireball Large 02","Fire Fireball Large 03"};
-	public string[] hitesSounds = { "Weapon Axe Hit On Dirt 01", "Weapon Axe Hit On Dirt 02" };
+	public string[] hitesSounds;
 
 	private CreateBulletFunc muzzle;
 

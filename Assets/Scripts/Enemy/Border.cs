@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Border : Enemy {
+public class Border : Vehicle {
 
 	// Use this for initialization
 	void Start () {

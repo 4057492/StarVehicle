@@ -16,11 +16,13 @@ public class Bullet00 : Bullet {
 	}
 
 	void OnTriggerEnter(Collider other){
-		if (other.GetComponent<Enemy> () != null) {
-			other.GetComponent<Enemy> ().Hited ();
-			other.GetComponent<Enemy> ().ChangeHp (damage);
+		if (other.GetComponent<Vehicle> () != null) {
+			other.GetComponent<Vehicle> ().Hited ();
+			if(other.GetComponent<Vehicle> ().ifInvincible==false)
+				other.GetComponent<Vehicle> ().ChangeHp (damage);
+			if (other.GetComponent<Vehicle> ().GetType () != typeof(Border))
+				ParticleEffectFunction.Show (gameObject, "SmallExplode");
 		}
-		ParticleEffectFunction.Show (gameObject, "SmallExplode");
 		Destroy (gameObject);
 	}
 }
