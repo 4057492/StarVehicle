@@ -15,6 +15,7 @@ public class Enemy01 : Vehicle {
 	private int i = 0;
 	private int count = 20;
 	private CreateBulletFunc cbf;
+	//private 
 
 
 	void Start () {

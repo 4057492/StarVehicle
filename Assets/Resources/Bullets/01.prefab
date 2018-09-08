@@ -96,6 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.1
   damage: 1
+  explode: SmallExplode
 --- !u!212 &212243700125154556
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -5,11 +5,10 @@ using UnityEngine;
 public class Bullet00 : Bullet {
 	public float speed = 0.1f;
 	public float damage = 1f;
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
+	public string explode;
+	public string[] sound;
+
+
 	// Update is called once per frame
 	void Update () {
 		transform.Translate (0, speed, 0);
@@ -21,7 +20,10 @@ public class Bullet00 : Bullet {
 			if(other.GetComponent<Vehicle> ().ifInvincible==false)
 				other.GetComponent<Vehicle> ().ChangeHp (damage);
 			if (other.GetComponent<Vehicle> ().GetType () != typeof(Border))
-				ParticleEffectFunction.Show (gameObject, "SmallExplode");
+				if(explode!=null)
+				ParticleEffectFunction.Show (gameObject, explode);
+			if (sound.Length != 0)
+				SoundEffectFunction.Play (gameObject, sound);
 		}
 		Destroy (gameObject);
 	}
