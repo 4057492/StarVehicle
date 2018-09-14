@@ -15,9 +15,9 @@ public class Arsenal : MonoBehaviour {
 	public List<BulletString> bullets = new List<BulletString>();
 
 	public struct BulletString{
+		public int number;
 		public string bullet;
 		public string[] sounds;
-		public int number;
 	}
 		
 
