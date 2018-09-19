@@ -29,6 +29,8 @@ public class Enemy00 : Vehicle {
 	public int shootWait;
 	public int count = 0;
 
+	public float damage;
+
 	void Start () {
 		animator = GetComponent<Animator> ();
 		cbf = GetComponent<CreateBulletFunc>();
@@ -56,7 +58,17 @@ public class Enemy00 : Vehicle {
 			muzzles [i].GetComponent<CreateBulletFunc> ().InsBullet (bullet);
 	}
 
-
+	void OnTriggerEnter(Collider other){
+		if (other.GetComponent<Vehicle> () != null) {
+			other.GetComponent<Vehicle> ().Hited ();
+			if (other.GetComponent<Vehicle> ().ifInvincible == false)
+				other.GetComponent<Vehicle> ().ChangeHp (damage);
+			if (other.GetComponent<Vehicle> ().GetType () == typeof(Border))
+				Destroy (gameObject);
+			else
+				Hited ();
+		}
+	}
 
 
 	public override void Hited ()

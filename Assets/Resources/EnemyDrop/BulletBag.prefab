@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4658656944384712}
   - component: {fileID: 212382993352699850}
   - component: {fileID: 95511576728406628}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: bulletbagline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4436906087657174}
   - component: {fileID: 212787529037541634}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: bulletbag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4752994787337810}
   - component: {fileID: 212186605638151780}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: double0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 4550719843989898}
   - component: {fileID: 212691590926551330}
   - component: {fileID: 95343613743671980}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: bulletbaglight_0000s_0009_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4656287681565032}
   - component: {fileID: 212041540715408260}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: pixie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 4086138522832410}
   - component: {fileID: 212961097138361106}
   - component: {fileID: 95675809457429832}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: double1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 4147318798059020}
   - component: {fileID: 65741921568310670}
   - component: {fileID: 114461552695090044}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: BulletBag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
