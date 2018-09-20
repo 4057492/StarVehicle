@@ -11,6 +11,8 @@ public class VehicleMove : Statem{
 	public float force = 100f;
 	public float stopForce = 2f;
 
+	public bool ifMove = true;
+
 
 
 	void Start () {
@@ -21,7 +23,9 @@ public class VehicleMove : Statem{
 	// Update is called once per frame
 	void Update () {
 		Anima ();
-		Move ();
+		if (ifMove) {
+			Move ();
+		}
 	}
 
 	void Move(){

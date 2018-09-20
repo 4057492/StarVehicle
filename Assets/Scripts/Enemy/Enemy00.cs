@@ -29,11 +29,15 @@ public class Enemy00 : Vehicle {
 	public int shootWait;
 	public int count = 0;
 
-	public float damage;
+	public float prepareTime = 1f;
+
+	private bool ifReady = false;
+
 
 	void Start () {
 		animator = GetComponent<Animator> ();
 		cbf = GetComponent<CreateBulletFunc>();
+		StartCoroutine (Wait ());
 	}
 
 	void Update () {
@@ -44,11 +48,13 @@ public class Enemy00 : Vehicle {
 			cbf.InsBullet ("BulletBag");
 			Destroy (gameObject);
 		}
-		if (count == 0)
-			Shoot ();
-		count++;
-		if (count == shootWait)
-			count = 0;
+		if (ifReady) {
+			if (count == 0)
+				Shoot ();
+			count++;
+			if (count == shootWait)
+				count = 0;
+		}
 	}
 
 	private void Shoot(){
@@ -58,16 +64,20 @@ public class Enemy00 : Vehicle {
 			muzzles [i].GetComponent<CreateBulletFunc> ().InsBullet (bullet);
 	}
 
+//	void OnTriggerEnter(Collider other){
+//		if (other.GetComponent<Vehicle> () != null) {
+//			other.GetComponent<Vehicle> ().Hited ();
+//			if (other.GetComponent<Vehicle> ().ifInvincible == false)
+//				other.GetComponent<Vehicle> ().ChangeHp (damage);
+//			if (other.GetComponent<Vehicle> ().GetType () == typeof(Border))
+//				Destroy (gameObject);
+//			else
+//				Hited ();
+//		}
+//	}
+
 	void OnTriggerEnter(Collider other){
-		if (other.GetComponent<Vehicle> () != null) {
-			other.GetComponent<Vehicle> ().Hited ();
-			if (other.GetComponent<Vehicle> ().ifInvincible == false)
-				other.GetComponent<Vehicle> ().ChangeHp (damage);
-			if (other.GetComponent<Vehicle> ().GetType () == typeof(Border))
-				Destroy (gameObject);
-			else
-				Hited ();
-		}
+		base.Crash (other);
 	}
 
 
@@ -86,6 +96,12 @@ public class Enemy00 : Vehicle {
 		shake = null;
 		yield return null;
 
+	}
+
+	IEnumerator Wait(){
+		yield return new WaitForSeconds (prepareTime);
+		ifReady = true;
+		yield return null;
 	}
 
 

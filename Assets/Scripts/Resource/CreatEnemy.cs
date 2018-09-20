@@ -7,6 +7,7 @@ public class CreatEnemy : MonoBehaviour {
 	// Use this for initializationa
 	void Start () {
 		CreatSingleEnemy ("Enemy00", 0, 0, 0.2f);
+		CreatMultiEnemy ("Enemy00", 0, 3, 0.2f, 0, 1f, -0.5f);
 	}
 	
 	// Update is called once per frame

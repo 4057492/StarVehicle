@@ -485,7 +485,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 1
   armour: 1
-  ifInvincible: 1
+  ifInvincible: 0
+  damage: 0
   hitesSounds:
   - hited
   shootSounds:
@@ -498,6 +499,7 @@ MonoBehaviour:
   bullet: enemybullet00
   shootWait: 40
   count: 0
+  prepareTime: 3
 --- !u!198 &198465746516092394
 ParticleSystem:
   m_ObjectHideFlags: 1
