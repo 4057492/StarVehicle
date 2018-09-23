@@ -11101,7 +11101,7 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!114 &519420030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13262,6 +13262,7 @@ GameObject:
   - component: {fileID: 1308564288}
   - component: {fileID: 1308564290}
   - component: {fileID: 1308564289}
+  - component: {fileID: 1308564291}
   m_Layer: 0
   m_Name: signal
   m_TagString: Untagged
@@ -13345,6 +13346,17 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1308564291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1308564287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05cf4569857367e4999be4a3af871251, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1317398287
 GameObject:
   m_ObjectHideFlags: 0
@@ -14390,6 +14402,7 @@ GameObject:
   - component: {fileID: 1553079020}
   - component: {fileID: 1553079022}
   - component: {fileID: 1553079021}
+  - component: {fileID: 1553079023}
   m_Layer: 0
   m_Name: redlight
   m_TagString: Untagged
@@ -14464,7 +14477,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: af56d0a24e7cb8e498a3509e1fd6632e, type: 3}
-  m_Color: {r: 0.6037736, g: 0.21929511, b: 0.21929511, a: 1}
+  m_Color: {r: 0.6037736, g: 0.21929511, b: 0.21929511, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -14473,6 +14486,17 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1553079023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1553079019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e860048e58a14af42aa4e8721b1e689c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1591820274
 GameObject:
   m_ObjectHideFlags: 0
@@ -14576,6 +14600,7 @@ GameObject:
   - component: {fileID: 1609306765}
   - component: {fileID: 1609306767}
   - component: {fileID: 1609306766}
+  - component: {fileID: 1609306768}
   m_Layer: 0
   m_Name: base
   m_TagString: Untagged
@@ -14659,6 +14684,17 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1609306768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1609306764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b70a8f5529c6a248828fbb958cea4af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1646337136
 GameObject:
   m_ObjectHideFlags: 0
@@ -14918,6 +14954,7 @@ GameObject:
   - component: {fileID: 1890645852}
   - component: {fileID: 1890645854}
   - component: {fileID: 1890645853}
+  - component: {fileID: 1890645856}
   m_Layer: 8
   m_Name: Vehicle
   m_TagString: Untagged
@@ -15118,6 +15155,13 @@ MonoBehaviour:
   damage: 1
   hitesSounds:
   - PlayerHited
+--- !u!81 &1890645856
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1890645844}
+  m_Enabled: 1
 --- !u!1 &1906075082
 GameObject:
   m_ObjectHideFlags: 0

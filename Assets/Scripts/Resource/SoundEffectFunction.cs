@@ -20,6 +20,7 @@ public class SoundEffectFunction : MonoBehaviour {
 		au = temp.GetComponent<AudioSource> ();
 		au.clip = (AudioClip)sound;
 		au.volume = volume;
+		au.spatialBlend = 0.5f;
 	}
 
 	IEnumerator End(){

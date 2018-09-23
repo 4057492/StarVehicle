@@ -17,6 +17,7 @@ public class Vehicle00 : Vehicle {
 		EventManager.shakeCamera ();
 		//SoundEffectFunction.Play (gameObject, sounds,0.5f);
 		SoundEffectFunction.Play (gameObject, hitesSounds);
+		ExpressionControl.ChangeToWarning ();
 	}
 	// Use this for initialization
 	void Start () {
